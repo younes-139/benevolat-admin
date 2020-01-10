@@ -28,29 +28,29 @@
                             </div>                                                                        
                         </li>
                         
-                        <li class=""><!--active-->
-                            <a href="#"><span class="fa fa-desktop"></span><span class="xn-text">Dashboard</span></a>                        
+                        <li class="active">
+                            <a role="button" (click)="changeComponent('dashboard')"><span class="fa fa-desktop"></span><span class="xn-text">Dashboard</span></a>                        
                         </li>                        
                         <ul>
                             <li class="xn-openable">
                                     <a href="#"><span class="fa fa-group"></span>Associations</a>
                                     <ul>
-                                        <li><a href=""><span class="fa fa-plus"></span>Ajouter une association</a></li>
-                                        <li><a href=""><span class="fa fa-align-justify"></span>Liste des associations</a></li>
+                                        <li><a role="button" (click)="changeComponent('addAssociation')"><span class="fa fa-plus"></span>Ajouter une association</a></li>
+                                        <li><a role="button" (click)="changeComponent('listAssociation')"><span class="fa fa-align-justify"></span>Liste des associations</a></li>
                                     </ul>
                             </li>
-                            <li class="xn-openable active">
+                            <li class="xn-openable">
                                     <a href="#"><span class="fa fa-calendar-o"></span>Activités</a>
                                     <ul>
-                                        <li><a href=""><span class="fa fa-check"></span>Valider une activité</a></li>
-                                        <li><a href=""><span class="fa fa-align-justify"></span>Liste des activités</a></li>
+                                        <li><a role="button" (click)="changeComponent('validerActivite')"><span class="fa fa-check"></span>Valider une activité</a></li>
+                                        <li><a role="button" (click)="changeComponent('listActivite')"><span class="fa fa-align-justify"></span>Liste des activités</a></li>
                                     </ul>
                             </li>
                             <li class="xn-openable">
                                         <a href="#"><span class="fa fa-gift"></span>Récompenses</a>
                                         <ul>
-                                            <li><a href=""><span class="fa fa-plus"></span>Ajouter une récompense</a></li>
-                                            <li><a href=""><span class="fa fa-align-justify"></span>Liste des récompenses</a></li>
+                                            <li><a role="button" (click)="changeComponent('addRecompense')"><span class="fa fa-plus"></span>Ajouter une récompense</a></li>
+                                            <li><a role="button" (click)="changeComponent('listRecompense')"><span class="fa fa-align-justify"></span>Liste des récompenses</a></li>
                                         </ul>
                             </li>                            
                         </ul>
@@ -184,13 +184,13 @@
         
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
-            <!--<app-dashboard></app-dashboard>-->
-            <!--<app-list-association></app-list-association>
-            <app-ajouter-association></app-ajouter-association>-->
-            <app-list-activite></app-list-activite>
-            <!--<app-valider-activite></app-valider-activite>
-            <app-list-recompense></app-list-recompense>
-            <app-ajouter-recompense></app-ajouter-recompense>-->
+            <app-dashboard *ngIf="dashboard" ></app-dashboard>
+            <app-list-association *ngIf="listAssociation" ></app-list-association>
+            <app-ajouter-association *ngIf="addAssociation" ></app-ajouter-association>
+            <app-list-activite *ngIf="listActivite" ></app-list-activite>
+            <app-valider-activite *ngIf="validerActivite" ></app-valider-activite>
+            <app-list-recompense *ngIf="listRecompense" ></app-list-recompense>
+            <app-ajouter-recompense *ngIf="addRecompense" ></app-ajouter-recompense>
         </div>
         <!-- END PAGE CONTENT WRAPPER -->                                
 </div>            
