@@ -1,120 +1,118 @@
 <div class="row">
-    <div class="col-md-12">
-        
-        <form class="form-horizontal">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong>Ajouter une</strong> Association</h3>
-                <ul class="panel-controls">
-                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
-                </ul>
+        <div class="col-md-12">
+            
+            <form class="form-horizontal" (ngSubmit)="onSubmit(association)" #association="ngForm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Ajouter une</strong> Association</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">                                                                        
+                    
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label" for="nom">Nom</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" id="nom" name="nom" required ngModel/>
+                            </div>                                            
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label" for="domaine">Domaine d'activité</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" id="domaine" name="domaine" required ngModel/>
+                            </div>                                            
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label" for="adresse">Adresse</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" id="adresse1" name="adresse1" required ngModel/>
+                            </div>                                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label" for="ville">Ville</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" id="ville" name="ville" required ngModel/>
+                            </div>                                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label" for="tel">Télephone</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" name="tel" id="tel" required ngModel/>
+                            </div>                                            
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label" for="description">Description</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <textarea class="form-control" rows="5" name="description" id="description" required ngModel></textarea>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label" for="email">Email</label>
+                        <div class="col-md-6 col-xs-12">                                            
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                <input type="text" class="form-control" id="email" name="email" required ngModel/>
+                            </div>                                            
+                        </div>
+                    </div>
+    
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label" for="mdp">Mot de passe</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
+                                <input type="password" class="form-control" name="mdp" id="mdp" required ngModel/>
+                            </div>            
+                        </div>
+                    </div>
+    
+                    <div class="form-group">                                        
+                        <label class="col-md-3 col-xs-12 control-label" for="cmdp">Confirmation de mot de passe</label>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
+                                <input type="password" class="form-control" name="cmdp" id="cmdp" required ngModel/>
+                            </div>            
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label" for="image">Image</label>
+                        <div class="col-md-6 col-xs-12">                                                                                                                                        
+                            <input type="file" class="fileinput btn-primary" name="image" id="image" title="image" required ngModel/>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default">Vider le formulaire</button>                                    
+                    <button class="btn btn-primary pull-right" type="submit">Ajouter</button>
+                </div>
             </div>
-            <div class="panel-body">                                                                        
-                
-                <div class="form-group">
-                    <label class="col-md-3 col-xs-12 control-label">Nom</label>
-                    <div class="col-md-6 col-xs-12">                                            
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                            <input type="text" class="form-control"/>
-                        </div>                                            
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-3 col-xs-12 control-label">Domaine d'activité</label>
-                    <div class="col-md-6 col-xs-12">                                            
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                            <input type="text" class="form-control"/>
-                        </div>                                            
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-3 col-xs-12 control-label">Adresse</label>
-                    <div class="col-md-6 col-xs-12">                                            
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                            <input type="text" class="form-control"/>
-                        </div>                                            
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 col-xs-12 control-label">Télephone</label>
-                    <div class="col-md-6 col-xs-12">                                            
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                            <input type="text" class="form-control"/>
-                        </div>                                            
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="col-md-3 col-xs-12 control-label">Rôle</label>
-                    <div class="col-md-6 col-xs-12">                                                                                            
-                        <select class="form-control select">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
-                            <option>Option 5</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-3 col-xs-12 control-label">Description</label>
-                    <div class="col-md-6 col-xs-12">                                            
-                        <textarea class="form-control" rows="5"></textarea>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-3 col-xs-12 control-label">Email</label>
-                    <div class="col-md-6 col-xs-12">                                            
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                            <input type="text" class="form-control"/>
-                        </div>                                            
-                    </div>
-                </div>
-
-                <div class="form-group">                                        
-                    <label class="col-md-3 col-xs-12 control-label">Mot de passe</label>
-                    <div class="col-md-6 col-xs-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-                            <input type="password" class="form-control"/>
-                        </div>            
-                    </div>
-                </div>
-
-                <div class="form-group">                                        
-                    <label class="col-md-3 col-xs-12 control-label">Confirmation de mot de passe</label>
-                    <div class="col-md-6 col-xs-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-                            <input type="password" class="form-control"/>
-                        </div>            
-                    </div>
-                </div>
-                
-                
-                <div class="form-group">
-                    <label class="col-md-3 col-xs-12 control-label">Image</label>
-                    <div class="col-md-6 col-xs-12">                                                                                                                                        
-                        <input type="file" class="fileinput btn-primary" name="filename" id="filename" title="Browse file"/>
-                    </div>
-                </div>
-
-            </div>
-            <div class="panel-footer">
-                <button class="btn btn-default">Vider le formulaire</button>                                    
-                <button class="btn btn-primary pull-right">Ajouter</button>
-            </div>
+            </form>
+            
         </div>
-        </form>
-        
-    </div>
-</div>   
+    </div>  

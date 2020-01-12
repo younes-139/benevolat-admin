@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AssociationService } from '../../shared/association/association.service';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-ajouter-association',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterAssociationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private associationService: AssociationService) { }
 
   ngOnInit() {
   }
 
+  onSubmit(form: NgForm){
+    console.log(form.value);
+    this.associationService.save(form.value).subscribe(
+      result => {
+      console.log("added*******"+result);
+      form.reset;
+      },
+      error => console.error(error));
+  }
 }

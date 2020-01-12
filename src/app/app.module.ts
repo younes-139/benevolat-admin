@@ -13,6 +13,11 @@ import { AjouterRecompenseComponent } from './admin/ajouter-recompense/ajouter-r
 import { ValiderActiviteComponent } from './admin/valider-activite/valider-activite.component';
 import { ListActiviteComponent } from './admin/list-activite/list-activite.component';
 
+import {HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatSelectModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +33,13 @@ import { ListActiviteComponent } from './admin/list-activite/list-activite.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule,
+    FormsModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
