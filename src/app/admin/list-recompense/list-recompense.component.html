@@ -1,1 +1,34 @@
-<p>list-recompense works!</p>
+<div class="row">
+    <div class="col">
+
+        <!-- START BASIC TABLE SAMPLE -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Liste des récompenses</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr *ngFor="let recompense of listRecompense">
+                                <td>{{recompense.titre}}</td>
+                                <td>{{recompense.description}}</td>
+                                <td>{{recompense.date}}</td>
+                                <td>{{recompense.score}}</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>                                
+            </div>
+        </div>
+        <!-- END BASIC TABLE SAMPLE -->
+    </div>
+</div>

@@ -19,7 +19,10 @@ export class AssociationService {
   getAllAssociation(): Observable<any> {
     return this.httpClient.get(this.API_ASSOCIATION);
   }
-  save(assosiation: any): Observable<any> {
+  getImageAssociation(id: String): Observable<any> {
+    return this.httpClient.get("http://localhost:8080/photoAssociation/"+id);
+  }
+  save(assosiation: FormData): Observable<any> {
     let result: Observable<any>;
       result = this.httpClient.post('http://localhost:8080/admin/AddAssociation', assosiation);
     return result;

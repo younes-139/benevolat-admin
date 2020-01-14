@@ -14,6 +14,11 @@ export class ListAssociationComponent implements OnInit {
     this.associationService.getAllAssociation().subscribe(
       res => {
         this.listAssociation = res._embedded.assosiations;
+        this.listAssociation.map(elem =>{
+          let id = elem.image.split(".");
+          elem.image="http://localhost:8080/photoAssociation/"+id[0];
+        }
+        );
         console.log(this.listAssociation);
       },
       error =>{

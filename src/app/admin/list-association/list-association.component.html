@@ -4,13 +4,13 @@
 
         <div class="panel panel-default" *ngFor="let association of listAssociation">                            
             <div class="panel-body panel-body-image">
-                <img src="assets/images/aiwa.jpg" alt="Aiwa"/>
+                <img [src]="association.image" alt="Aiwa"/>
                 <a href="#" class="panel-body-inform">
                     <span class="fa fa-heart-o"></span>
                 </a>
             </div>
             <div class="panel-body">
-                <h3>Association {{association.nom}} &mdash; <b>{{association.activites.length}}</b> Activités organisé</h3>
+                <h3>Association {{association.nom}} &mdash; <!--<b>{{association.activites.length}}</b>--> Activités organisé</h3>
                 <p>{{association.description}}.</p>
             </div>
         </div>

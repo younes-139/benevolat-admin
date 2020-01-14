@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RecompenseService {
-  public API_RECOMPENSE = 'http://localhost:8080/assosiations';
+  public API_RECOMPENSE = 'http://localhost:8080/recompences';
 
   constructor(private httpClient: HttpClient) { }
 

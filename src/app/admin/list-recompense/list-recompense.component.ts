@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecompenseService } from '../../shared/recompense/recompense.service';
 
 @Component({
   selector: 'app-list-recompense',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-recompense.component.css']
 })
 export class ListRecompenseComponent implements OnInit {
-
-  constructor() { }
+  
+  listRecompense : Array<any>;
+  constructor(private _recompenseService: RecompenseService) { }
 
   ngOnInit() {
+    this._recompenseService.getAllRecompense().subscribe(
+      res => {
+        this.listRecompense = res._embedded.recompences;
+        console.log(this.listRecompense);
+      },
+      error =>{
+        console.log(error);
+      }
+      );
   }
 
 }

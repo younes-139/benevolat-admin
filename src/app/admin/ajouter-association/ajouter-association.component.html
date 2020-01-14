@@ -102,7 +102,7 @@
                     <div class="form-group">
                         <label class="col-md-3 col-xs-12 control-label" for="image">Image</label>
                         <div class="col-md-6 col-xs-12">                                                                                                                                        
-                            <input type="file" class="fileinput btn-primary" name="image" id="image" title="image" required ngModel/>
+                            <input type="file" class="fileinput btn-primary" accept="image/*" (change)="onselectImage($event)" name="image" id="image" title="image" required ngModel/>
                         </div>
                     </div>
     
