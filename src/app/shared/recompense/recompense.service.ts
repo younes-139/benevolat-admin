@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RecompenseService {
-  public API_RECOMPENSE = 'http://localhost:8080/recompences';
+  public API_RECOMPENSE = 'http://localhost:8080/admin/recompences';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,6 +18,11 @@ export class RecompenseService {
     console.log(recompense)
     let result: Observable<any>;
       result = this.httpClient.post('http://localhost:8080/admin/AddRecompence', recompense);
+    return result;
+  }
+  delete(id): Observable<any> {
+    let result: Observable<any>;
+      result = this.httpClient.delete("http://localhost:8080/recompences/"+id);
     return result;
   }
 }

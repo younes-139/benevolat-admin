@@ -29,7 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListRecompenseComponent,
     AjouterRecompenseComponent,
     ValiderActiviteComponent,
-    ListActiviteComponent
+    ListActiviteComponent,
   ],
   imports: [
     BrowserModule,

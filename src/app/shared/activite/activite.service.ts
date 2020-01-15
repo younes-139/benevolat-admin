@@ -13,4 +13,18 @@ export class ActiviteService {
   getAllActivites(): Observable<any> {
     return this.httpClient.get(this.API_ACTIVITE);
   }
+  getAllInProgressActivites(): Observable<any> {
+    return this.httpClient.get(this.API_ACTIVITE+'/inProgress');
+  }
+  validerActivite(id,data,score): Observable<any> {
+    let result: Observable<any>;
+      result = this.httpClient.put('http://localhost:8080/ActionOnActivite?id='+id+'&status=accepted&score='+score,data);
+    return result;
+  }
+  refuserActivite(id,data){
+    let result: Observable<any>;
+      result = this.httpClient.put('http://localhost:8080/ActionOnActivite?id='+id+'&status=refused&score=' ,data);
+    return result;
+  }
 }
+//
