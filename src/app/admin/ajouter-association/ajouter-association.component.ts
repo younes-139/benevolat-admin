@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AssociationService } from '../../shared/association/association.service';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajouter-association',
@@ -10,15 +10,18 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 })
 export class AjouterAssociationComponent implements OnInit {
   public associationImage: any = File;
-  constructor(private associationService: AssociationService) { }
+  constructor(private associationService: AssociationService, private router: Router) { }
 
   ngOnInit() {
+    console.log(sessionStorage.getItem("id_admin"));
   }
   onselectImage(event) {
     const file = event.target.files[0];
     this.associationImage = file;
   }
-
+  goToList() {
+    this.router.navigate(['/admin/liste-des-associations']);
+  }
   onSubmit(form: NgForm){
     console.log(form.value);
 
